@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:13.4
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=simpleflaskapp
+    ports:
+      - 5432:5432

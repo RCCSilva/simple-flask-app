@@ -1,4 +1,4 @@
-FROM public.ecr.aws/sam/build-python3.8:latest
+FROM python:3.8-slim
 
 WORKDIR /home/simpleflaskapp
 
@@ -8,6 +8,7 @@ RUN venv/bin/pip install -r requirements.txt
 RUN venv/bin/pip install gunicorn
 
 COPY app app
+COPY migrations migrations
 COPY simpleflaskapp.py config.py boot.sh ./
 RUN chmod a+x boot.sh
 

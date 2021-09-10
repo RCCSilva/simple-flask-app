@@ -37,3 +37,6 @@ nosetests.xml
 
 venv
 imageDetail.json
+.env
+.flaskenv
+.idea/
