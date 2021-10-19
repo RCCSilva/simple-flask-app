@@ -30,6 +30,10 @@ def create_app(config_class=Config):
     def index():
         return {'status': 'ok', 'message': Config.RESPONSE_TEXT}
 
+    @app.route('/health')
+    def index():
+        return {'status': 'ok'}
+
     @app.route('/post', methods=['POST'])
     def create_post():
         name = request.json['name']
